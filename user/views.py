@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
+from user.forms import UserCreationForm
 
 
 def home(request):
     return render(request, 'user/home.html')
-
-
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
 
 def register(request):
     if request.user.is_authenticated:
